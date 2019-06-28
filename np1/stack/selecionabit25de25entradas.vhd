@@ -5,5 +5,5 @@ end selecionabit25de25entradas;
 
 architecture arch of selecionabit25de25entradas is
 	begin
-	ou <= ent(25);
+	ou <= ent(16);
 end arch;
