@@ -9,18 +9,14 @@ entity math_processing is
 end math_processing;
 
 architecture arch of math_processing is
-	signal outp : std_logic_vector(7 downto 0);
 	signal const : integer;
 	begin
-		const <= 6;
+		const <= 10;
 		
 		process(add,sub,mult,div) is
 			variable inp : integer;
---			variable const : integer;
 			begin
 				inp := integer(to_integer(signed(number)));
---				inp := integer(to_integer(signed(outp)));
---				const := integer(to_integer(signed(number)));
 				
 				if (add='1') then
 					inp := inp + const;
@@ -32,8 +28,6 @@ architecture arch of math_processing is
 					inp := inp / const;
 				end if;
 				
-				outp <= std_logic_vector(to_signed(inp, outp'length));
+				result <= std_logic_vector(to_signed(inp, result'length));
 		end process;
-		
-		result <= outp;
 end arch;

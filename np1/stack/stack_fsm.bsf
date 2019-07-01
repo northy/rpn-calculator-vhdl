@@ -65,13 +65,6 @@ applicable agreement for further details.
 		(text "dataout[7..0]" (rect 123 27 171 39)(font "Arial" ))
 		(line (pt 192 32)(pt 176 32)(line_width 3))
 	)
-	(port
-		(pt 192 48)
-		(output)
-		(text "testo[7..0]" (rect 0 0 38 12)(font "Arial" ))
-		(text "testo[7..0]" (rect 133 43 171 55)(font "Arial" ))
-		(line (pt 192 48)(pt 176 48)(line_width 3))
-	)
 	(drawing
 		(rectangle (rect 16 16 176 128)(line_width 1))
 	)
