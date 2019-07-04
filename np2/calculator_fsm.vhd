@@ -14,8 +14,7 @@ ENTITY calculator_fsm IS
 			stack_pop : OUT STD_LOGIC;
 			stack_in  : OUT STD_LOGIC_VECTOR(7 downto 0);
 			math_in1  : OUT STD_LOGIC_VECTOR(7 downto 0);
-			math_in2  : OUT STD_LOGIC_VECTOR(7 downto 0);
-			output    : OUT STD_LOGIC_VECTOR(7 downto 0));
+			math_in2  : OUT STD_LOGIC_VECTOR(7 downto 0));
 END calculator_fsm;
 
 ARCHITECTURE arch OF calculator_fsm IS
@@ -36,7 +35,6 @@ ARCHITECTURE arch OF calculator_fsm IS
 					stack_pop <= '0';
 					fsm_push <= '0';
 					stack_in <= input;
-					output <= "00000000";
 				ELSE
 					stack_pop <= '0';
 					fsm_push <= '0';
@@ -120,7 +118,6 @@ ARCHITECTURE arch OF calculator_fsm IS
 							math_in1 <= second_number;
 						WHEN wait34 =>
 							stack_in <= math_out;
-							output <= math_out;
 						WHEN wait36 =>
 							fsm_push <= '1';
 						WHEN OTHERS =>

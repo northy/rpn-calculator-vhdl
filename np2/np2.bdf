@@ -223,23 +223,6 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 904 256 952 272))
 )
-(pin
-	(output)
-	(rect 736 312 912 328)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "LEDR[0]" (rect 90 0 132 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 912 328 968 344))
-)
 (symbol
 	(rect -16 152 128 232)
 	(text "selecionabit25de25entradas" (rect 5 0 140 12)(font "Arial" ))
@@ -402,7 +385,7 @@ applicable agreement for further details.
 (symbol
 	(rect 464 136 616 328)
 	(text "calculator" (rect 5 0 60 14)(font "Arial" (font_size 8)))
-	(text "inst" (rect 8 176 25 188)(font "Arial" ))
+	(text "calc" (rect 8 176 28 188)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -486,13 +469,6 @@ applicable agreement for further details.
 		(text "H3[0..6]" (rect 0 0 43 14)(font "Arial" (font_size 8)))
 		(text "H3[0..6]" (rect 88 75 131 89)(font "Arial" (font_size 8)))
 		(line (pt 152 80)(pt 136 80)(line_width 3))
-	)
-	(port
-		(pt 152 96)
-		(output)
-		(text "testo" (rect 0 0 28 14)(font "Arial" (font_size 8)))
-		(text "testo" (rect 103 91 131 105)(font "Arial" (font_size 8)))
-		(line (pt 152 96)(pt 136 96))
 	)
 	(drawing
 		(rectangle (rect 16 16 136 176))
@@ -663,18 +639,6 @@ applicable agreement for further details.
 	(pt -32 208)
 	(pt -32 184)
 	(bus)
-)
-(connector
-	(pt 616 232)
-	(pt 648 232)
-)
-(connector
-	(pt 648 232)
-	(pt 648 320)
-)
-(connector
-	(pt 648 320)
-	(pt 736 320)
 )
 (connector
 	(pt 352 248)

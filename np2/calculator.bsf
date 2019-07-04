@@ -107,13 +107,6 @@ applicable agreement for further details.
 		(text "H3[0..6]" (rect 88 75 131 89)(font "Arial" (font_size 8)))
 		(line (pt 152 80)(pt 136 80)(line_width 3))
 	)
-	(port
-		(pt 152 96)
-		(output)
-		(text "testo" (rect 0 0 28 14)(font "Arial" (font_size 8)))
-		(text "testo" (rect 103 91 131 105)(font "Arial" (font_size 8)))
-		(line (pt 152 96)(pt 136 96))
-	)
 	(drawing
 		(rectangle (rect 16 16 136 176))
 	)
