@@ -14,8 +14,8 @@ architecture arch of math_processing is
 		process(add,sub,mult,div,number1,number2) is
 			variable inp, inp1, inp2 : integer;
 			begin
-				inp1 := integer(to_integer(signed(number1)));
-				inp2 := integer(to_integer(signed(number2)));
+				inp1 := integer(to_integer(unsigned(number1)));
+				inp2 := integer(to_integer(unsigned(number2)));
 				
 				if (add='1') then
 					inp := inp1 + inp2;
@@ -27,6 +27,6 @@ architecture arch of math_processing is
 					inp := inp1 / inp2;
 				end if;
 				
-				result <= std_logic_vector(to_signed(inp, result'length));
+				result <= std_logic_vector(to_unsigned(inp, result'length));
 		end process;
 end arch;
