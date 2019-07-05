@@ -21,14 +21,10 @@ architecture arch of stack_fsm is
 		variable ptr : integer range 0 to 8;
 		begin
 			if (rising_edge(clk)) then
-				if (ptr>=1) then
-					ptrflag <= '1';
-				else
-					ptrflag <= '0';
-				end if;
 				if (reset='1') then
 					state <= init;
 					stack <= (others => (others => '0'));
+					ptrflag <= '0';
 					dataout <= "00000000";
 					ptr := 0;
 				else
@@ -67,6 +63,11 @@ architecture arch of stack_fsm is
 							null;
 					end case;
 				end if;
+			end if;
+			if (ptr>=2) then
+					ptrflag <= '1';
+				else
+					ptrflag <= '0';
 			end if;
 		end process proc;
 		

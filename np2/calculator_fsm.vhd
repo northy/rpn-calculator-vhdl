@@ -18,7 +18,7 @@ ENTITY calculator_fsm IS
 END calculator_fsm;
 
 ARCHITECTURE arch OF calculator_fsm IS
-	TYPE t_state IS (init, NEN, insertn, waiting, read1, read2, wait11, wait12, wait21, wait22, wait23, wait31, wait32, wait33, wait34, wait35, wait36, wait37, processop);
+	TYPE t_state IS (init, NEN, insertn, waiting, wait0, read1, read2, wait11, wait12, wait13, wait21, wait22, wait23, wait31, wait32, wait33, wait34, wait35, wait36, wait37, processop);
 	SIGNAL state : t_state;
 	BEGIN
 		PROCESS(clk)
@@ -49,6 +49,8 @@ ARCHITECTURE arch OF calculator_fsm IS
 								state <= insertn;
 							END IF;
 						WHEN insertn =>
+							state <= wait0;
+						WHEN wait0 =>
 							IF (push = '0') THEN
 								IF (ptrflag = '1') THEN
 									state <= waiting;
@@ -68,6 +70,8 @@ ARCHITECTURE arch OF calculator_fsm IS
 						WHEN wait11 =>
 							state <= wait12;
 						WHEN wait12 =>
+							state <= wait13;
+						WHEN wait13 =>
 							state <= read2;
 						WHEN read2 =>
 							state <= wait21;
@@ -109,7 +113,7 @@ ARCHITECTURE arch OF calculator_fsm IS
 							stack_pop <= '1';
 						WHEN read2 =>
 							stack_pop <= '1';
-						WHEN wait12 =>
+						WHEN wait13 =>
 							first_number := stack_out;
 						WHEN wait23 =>
 							second_number := stack_out;
