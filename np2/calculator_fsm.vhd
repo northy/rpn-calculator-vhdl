@@ -127,7 +127,6 @@ ARCHITECTURE arch OF calculator_fsm IS
 						WHEN OTHERS =>
 							null;
 					END CASE;
-					
 				END IF;
 			END IF;
 		END PROCESS;

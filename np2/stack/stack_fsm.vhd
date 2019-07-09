@@ -5,10 +5,9 @@ use ieee.numeric_std.all;
 entity stack_fsm is
 	port(datain : in std_logic_vector(7 downto 0);
 		  push, pop, clk, reset : in std_logic;
-		  dataout : out std_logic_vector(7 downto 0);
+		  dataout, elementscount : out std_logic_vector(7 downto 0);
 		  ptrflag : out std_logic);
 end stack_fsm;
-
 
 architecture arch of stack_fsm is
 	type estado is (init, still, push_op, pop_op);
@@ -69,6 +68,26 @@ architecture arch of stack_fsm is
 				else
 					ptrflag <= '0';
 			end if;
+			case ptr is
+				when 0 =>
+					elementscount <= "00000000";
+				when 1 =>
+					elementscount <= "00000001";
+				when 2 =>
+					elementscount <= "00000011";
+				when 3 =>
+					elementscount <= "00000111";
+				when 4 =>
+					elementscount <= "00001111";
+				when 5 =>
+					elementscount <= "00011111";
+				when 6 =>
+					elementscount <= "00111111";
+				when 7 =>
+					elementscount <= "01111111";
+				when 8 =>
+					elementscount <= "11111111";
+			end case;
 		end process proc;
 		
 		--debounce
